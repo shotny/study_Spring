@@ -52,7 +52,7 @@ public class MemberService {
     // 멀티쓰레드 환경 등 저장이 동시에 될 경우 이렇게 해두어도 같은 회원명으로 중북 저장될 수 있다.
     // 그렇기 때문에 실무에서는 한 번 더 점검해야한다. (DB에 유니크 제약 조건 등)
     public void validateDuplicateMember(Member member) {
-        List<Member> findMembers = memberRepository.findByMember(member.getUserName());
+        List<Member> findMembers = memberRepository.findByMember(member.getName());
         if (!findMembers.isEmpty()) {
             throw new IllegalStateException("이미 존재하는 회원입니다.");
         }

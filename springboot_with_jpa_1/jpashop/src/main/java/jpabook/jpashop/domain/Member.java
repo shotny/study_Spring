@@ -15,7 +15,7 @@ public class Member {
     @Column(name = "member_id")
     private Long id;
 
-    private String userName;
+    private String name;
 
     @Embedded //객체의 @Embedable 둘 중 하나만 붙여도 됨
     private Address address;

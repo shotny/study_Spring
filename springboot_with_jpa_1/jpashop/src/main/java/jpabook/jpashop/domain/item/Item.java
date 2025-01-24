@@ -28,13 +28,13 @@ public abstract class Item {
 
     //==비즈니스 로직==//
     //stock 증가
-    public void addStock(int quatity) {
-        this.stockQuantity +=quatity;
+    public void addStock(int quantity) {
+        this.stockQuantity += quantity;
     }
 
     //stock 감소
-    public void removeStock(int quatity) {
-        int restStock = this.stockQuantity - quatity;
+    public void removeStock(int quantity) {
+        int restStock = this.stockQuantity - quantity;
         if(restStock < 0){
             throw new NotEnoughStockException("need more stock");
         }
